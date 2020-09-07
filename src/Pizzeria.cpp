@@ -54,7 +54,6 @@ void Pizzeria::completeOrder(int orderId) {
     if (order != orders_.end()) {
         std::cout << "Order " << orderId << " completed" << std::endl;
         std::get<Status>(*order) = Status::Completed;
-    } else {
-        throw std::invalid_argument("Order with id: " + std::to_string(orderId) + "not found");
     }
+    throw std::invalid_argument("Order with id: " + std::to_string(orderId) + "not found");
 }
